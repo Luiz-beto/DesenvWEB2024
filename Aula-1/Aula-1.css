@@ -66,22 +66,41 @@ form {
     padding: 10px 15px;
     background-color: #007BFF;
     color: #fff;
-    border: none;
+    border: #007BFF solid 1px;
     border-radius: 5px;
     cursor: pointer;
     
 }
 
 .form-group button:hover {
-    background-color: #0056b3;
+    background-color: #ffffff;
+    color: #007BFF;
     transform: scale(1.02);
-    
+    border: #007BFF solid 1px;
+    transition: background-color 0.3s, color 0.9s;
+
 }
 
 
 .form-group button:active {
-    background-color: #004494;
-    border-color: #004494;
+    background-color: #007BFF;
+    color: #ffffff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     transform: translateY(2px);
+}
+#bem-vindo {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #007BFF;
+    color: #fff;
+    padding: 15px;
+    border-radius: 5px;
+    font-size: 18px;
+    text-align: center;
+    width: 80%;
+    max-width: 400px;
+    opacity: 1;
+    transition: opacity 1s ease-out;
 }
