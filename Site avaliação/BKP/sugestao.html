@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deixe sua Sugestão</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <h1>Deixe sua Sugestão</h1>
+    <textarea id="sugestao" rows="4" cols="30" placeholder="Escreva sua sugestão aqui..."></textarea>
+    <button id="enviarSugestao">Enviar</button>
+
+    <footer>
+        <p>Sua avaliação espontânea e anônima, nenhuma informação pessoal é solicitada ou armazenada.</p>
+    </footer>
+
+    <script>
+        const enviarSugestaoButton = document.getElementById('enviarSugestao');
+
+        enviarSugestaoButton.addEventListener('click', () => {
+            const sugestao = document.getElementById('sugestao').value;
+            window.location.href = `avaliacao_enviada.html?sugestao=${encodeURIComponent(sugestao)}`; // Redireciona para a página de avaliação enviada
+        });
+    </script>
+</body>
+</html>
