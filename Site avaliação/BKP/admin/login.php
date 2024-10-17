@@ -8,7 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Verifica usuário e senha (simulação, substitua por consulta ao banco)
     $usuario = $_POST['usuario'];
     $senha = $_POST['senha'];
-    if ($usuario == 'admin' && $senha == '1217') { // Substitua pela lógica de autenticação real
+    if ($usuario == 'beto' && $senha == '1217') { // Substitua pela lógica de autenticação real
         $_SESSION['usuario'] = $usuario;
         header('Location: painel.php');
         exit;
