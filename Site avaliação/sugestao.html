@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
     <h1>Deixe sua Sugestão</h1>
     <textarea id="sugestao" rows="4" cols="30" placeholder="Escreva sua sugestão aqui..."></textarea>
     <button id="enviarSugestao">Enviar</button>
@@ -17,11 +16,9 @@
     </footer>
 
     <script>
-        const enviarSugestaoButton = document.getElementById('enviarSugestao');
-
-        enviarSugestaoButton.addEventListener('click', () => {
+        document.getElementById('enviarSugestao').addEventListener('click', () => {
             const sugestao = document.getElementById('sugestao').value;
-            window.location.href = `avaliacao_enviada.html?sugestao=${encodeURIComponent(sugestao)}`; // Redireciona para a página de avaliação enviada
+            window.location.href = `avaliacao_enviada.html?sugestao=${encodeURIComponent(sugestao)}`;
         });
     </script>
 </body>

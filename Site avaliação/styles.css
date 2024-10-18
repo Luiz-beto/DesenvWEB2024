@@ -18,94 +18,52 @@ h1 {
 }
 
 .box {
-    width: 100px; /* Tamanho maior */
-    height: 100px; /* Tamanho maior */
+    width: 100px;
+    height: 100px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 10px; /* Bordas mais arredondadas */
+    border-radius: 10px;
     color: white;
     font-weight: bold;
     cursor: pointer;
-    transition: transform 0.2s; /* Efeito suave na transformação */
+    transition: transform 0.2s;
 }
 
 .box:hover {
-    transform: scale(1.1); /* Aumenta o tamanho ao passar o mouse */
+    transform: scale(1.1);
 }
 
 .box-0, .box-1, .box-2, .box-3 {
-    background-color: rgb(255, 0, 0); /* Vermelho */
+    background-color: rgb(255, 0, 0);
 }
 
 .box-4, .box-5, .box-6 {
-    background-color: rgb(255, 165, 0); /* Laranja/Amarelo */
+    background-color: rgb(255, 165, 0);
 }
 
 .box-7, .box-8, .box-9, .box-10 {
-    background-color: rgb(50, 161, 50); /* Verde */
+    background-color: rgb(50, 161, 50);
 }
+
 
 #avaliacaoSelecionada {
     margin-top: 20px;
-    font-size: 2rem; /* Aumenta o tamanho da fonte */
-    color: rgb(50, 161, 50); /* Cor verde para o número selecionado */
-    font-weight: bold; /* Deixa o texto em negrito */
-}
-
-#containerSugestao {
-    display: none;
-    margin-top: 20px;
-    text-align: center; /* Centraliza o texto */
-}
-
-label[for="sugestao"] {
-    font-size: 1.2rem; /* Aumenta o tamanho da fonte do rótulo */
-    margin-bottom: 10px; /* Espaço entre o rótulo e a área de texto */
-}
-
-#sugestao {
-    width: 100%; /* Ajusta o tamanho do textarea para preencher o espaço disponível */
-    height: 100px; /* Aumenta a altura do textarea */
-    border: 2px solid rgb(50, 161, 50); /* Borda verde */
-    border-radius: 5px; /* Bordas arredondadas */
-    padding: 10px; /* Espaçamento interno */
-    font-size: 1rem; /* Tamanho da fonte */
-    resize: none; /* Remove a opção de redimensionar */
+    font-size: 25px;
+    color: rgb(50, 161, 50);
+    font-weight: bold;
 }
 
 button {
-    padding: 10px 20px; /* Espaçamento interno */
-    border: none; /* Remove a borda padrão */
-    border-radius: 5px; /* Bordas arredondadas */
-    color: white; /* Cor do texto */
-    font-size: 1rem; /* Tamanho da fonte */
-    cursor: pointer; /* Muda o cursor para pointer */
-    transition: background-color 0.3s, transform 0.2s; /* Transição suave para a cor e transformação */
-}
-
-#enviarSugestao {
-    background-color: rgb(50, 161, 50); /* Verde */
-    margin: 5px;
-}
-
-#enviarSugestao:hover {
-    background-color: rgb(40, 130, 40); /* Verde mais escuro ao passar o mouse */
-    transform: scale(1.05); /* Aumenta um pouco ao passar o mouse */
-}
-
-#prosseguir {
-    background-color: rgb(50, 161, 50); /* Verde */
-}
-
-#prosseguir:hover {
-    background-color: rgb(40, 130, 40); /* Verde mais escuro ao passar o mouse */
-    transform: scale(1.05); /* Aumenta um pouco ao passar o mouse */
-}
-
-footer {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    background-color: rgb(50, 161, 50);
+    cursor: pointer;
     margin-top: 20px;
-    font-size: 0.9rem;
-    color: #555;
-    text-align: center;
+}
+
+button:hover {
+    background-color: rgb(40, 130, 40);
 }

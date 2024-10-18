@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avaliação de Atendimento</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Avalie nosso Atendimento</h1>
+<div class="container" id="containerAvaliacao">
+    <div class="box box-0" data-valor="0">0</div>
+    <div class="box box-1" data-valor="1">1</div>
+    <div class="box box-2" data-valor="2">2</div>
+    <div class="box box-3" data-valor="3">3</div>
+    <div class="box box-4" data-valor="4">4</div>
+    <div class="box box-5" data-valor="5">5</div>
+    <div class="box box-6" data-valor="6">6</div>
+    <div class="box box-7" data-valor="7">7</div>
+    <div class="box box-8" data-valor="8">8</div>
+    <div class="box box-9" data-valor="9">9</div>
+    <div class="box box-10" data-valor="10">10</div>
+</div>
+
+
+    <div id="avaliacaoSelecionada" style="margin-top: 20px; font-size: 1.5rem;"></div>
+    <button id="prosseguir" style="display: none;">Prosseguir</button>
+    <div id="mensagemAgradecimento" style="display: none; margin-top: 20px; font-size: 1.2rem; text-align: center;">
+        O Hospital Regional Alto Vale (HRAV) agradece sua resposta.
+    </div>
+
+    <footer>
+        <p>Sua avaliação é anônima e nenhuma informação pessoal é solicitada.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deixe sua Sugestão</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Deixe sua Sugestão</h1>
+    <textarea id="sugestao" rows="4" cols="30" placeholder="Escreva sua sugestão aqui..."></textarea>
+    <button id="enviarSugestao">Enviar</button>
+
+    <footer>
+        <p>Sua avaliação espontânea e anônima, nenhuma informação pessoal é solicitada ou armazenada.</p>
+    </footer>
+
+    <script>
+        document.getElementById('enviarSugestao').addEventListener('click', () => {
+            const sugestao = document.getElementById('sugestao').value;
+            window.location.href = `avaliacao_enviada.html?sugestao=${encodeURIComponent(sugestao)}`;
+        });
+    </script>
+</body>
+</html>
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+#containerAvaliacao {
+    display: flex;
+    gap: 15px;
+}
+
+.box {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.box:hover {
+    transform: scale(1.1);
+}
+
+.box-0, .box-1, .box-2, .box-3 {
+    background-color: rgb(255, 0, 0);
+}
+
+.box-4, .box-5, .box-6 {
+    background-color: rgb(255, 165, 0);
+}
+
+.box-7, .box-8, .box-9, .box-10 {
+    background-color: rgb(50, 161, 50);
+}
+
+
+#avaliacaoSelecionada {
+    margin-top: 20px;
+    font-size: 25px;
+    color: rgb(50, 161, 50);
+    font-weight: bold;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    background-color: rgb(50, 161, 50);
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: rgb(40, 130, 40);
+}
+const boxes = document.querySelectorAll('.box');
+const avaliacaoSelecionada = document.getElementById('avaliacaoSelecionada');
+const prosseguirButton = document.getElementById('prosseguir');
+
+let notaSelecionada = null;
+
+boxes.forEach(box => {
+    box.addEventListener('click', () => {
+        notaSelecionada = box.dataset.valor;
+
+        // Exibir apenas o número da nota selecionada
+        avaliacaoSelecionada.textContent = notaSelecionada;
+
+        // Definir a cor da nota selecionada
+        if (notaSelecionada <= 3) {
+            avaliacaoSelecionada.style.color = 'rgb(255, 0, 0)'; // Vermelho
+        } else if (notaSelecionada <= 6) {
+            avaliacaoSelecionada.style.color = 'rgb(255, 165, 0)'; // Laranja
+        } else {
+            avaliacaoSelecionada.style.color = 'rgb(50, 161, 50)'; // Verde
+        }
+
+        // Aumentar o tamanho da fonte
+        avaliacaoSelecionada.style.fontSize = '3rem';
+
+        prosseguirButton.style.display = 'block';
+
+        // Remover a classe 'selecionada' de todas as caixas
+        boxes.forEach(b => b.classList.remove('selecionada'));
+        // Adicionar a classe 'selecionada' à caixa clicada
+        box.classList.add('selecionada');
+    });
+   document.getElementById('prosseguir').addEventListener('click', () => {
+        window.location.href = 'sugestao.html'; // Substitua pelo nome correto do seu arquivo
+    })
+
+});
+
+
+    
+
+<?php
+$host = 'localhost';
+$db = 'hospital';
+$user = 'beto';
+$pass = '117';
+
+try {
+    $pdo = new PDO("pgsql:host=$host;dbname=$db", $user, $pass);
+} catch (PDOException $e) {
+    echo 'Conexão falhou: ' . $e->getMessage();
+}
+?>
