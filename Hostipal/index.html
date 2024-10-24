@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Painel de Controle</title>
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    </head>
+    
+    <body>
+        <h1>Painel de Controle</h1>
+        <div class="button-container">
+            <button id="acessarCliente">
+                <i class="fas fa-user-md"></i> Atendimento
+            </button>
+            <button id="acessarAdmin">
+                <i class="fas fa-lock"></i>Admin
+            </button>
+        </div>
+    
+        <footer>
+            <p>Selecione uma opção acima para continuar.</p>
+        </footer>
+    
+        <script>
+            document.getElementById('acessarCliente').addEventListener('click', () => {
+                window.location.href = 'avaliacao.php'; // Redireciona para a página do cliente
+            });
+    
+            document.getElementById('acessarAdmin').addEventListener('click', () => {
+                window.location.href = 'login.html'; // Redireciona para a página de login do admin
+            });
+        </script>
+    </body>
+    
+</html>

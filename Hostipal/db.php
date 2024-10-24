@@ -2,7 +2,7 @@
 $host = 'localhost';
 $db = 'hospital';
 $user = 'beto';
-$pass = '117';
+$pass = '1217';
 
 try {
     $pdo = new PDO("pgsql:host=$host;dbname=$db", $user, $pass);

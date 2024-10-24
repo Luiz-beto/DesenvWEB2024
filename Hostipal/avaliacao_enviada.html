@@ -13,10 +13,10 @@
     <p>O Hospital Regional Alto Vale (HRAV) agradece sua resposta e
         ela é muito importante para nós, pois nos ajuda a melhorar continuamente nossos serviços.</p>
     </p>
-    <p>Você será redirecionado em <span id="cronometro">10</span> segundos.</p>
+    <p>Você será redirecionado em <span id="cronometro">5</span> segundos.</p>
 
     <footer>
-        <p>Sua avaliação espontânea e anônima, nenhuma informação pessoal é solicitada ou armazenada.</p>
+
     </footer>
 
     <script>
@@ -26,7 +26,7 @@
         console.log(`Sugestão recebida: ${sugestao}`); // Para depuração
 
         // Configuração do cronômetro
-        let tempoRestante = 10; // 5 segundos
+        let tempoRestante = 5; // 5 segundos
         const cronometroElement = document.getElementById('cronometro');
 
         const intervalo = setInterval(() => {
@@ -36,7 +36,7 @@
             // Quando o tempo acabar
             if (tempoRestante <= 0) {
                 clearInterval(intervalo); // Para o cronômetro
-                window.location.href = 'index.html'; // Redireciona para a página principal
+                window.location.href = 'avaliacao.php'; // Redireciona para a página principal
             }
         }, 1000); // Atualiza a cada 1 segundo
     </script>
